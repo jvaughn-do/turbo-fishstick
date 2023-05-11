@@ -15,7 +15,7 @@ app.set('view engine', 'pug');
 
 //setup logging
 app.enable("trust proxy");
-app.use(logger(':date[iso] :remote-addr :method :url :status :res[content-length] - :response-time ms'));
+app.use(logger(':date[iso] :remote-addr :x-forwarded-for :method :url :status :res[content-length] - :response-time ms'));
 app.use(logger('dev'));
 
 app.use(express.json());
